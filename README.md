@@ -1,4 +1,4 @@
-# DE-Zoomcamp_2023_HWs
+# Data Engineering Zoomcamp (2023 Cohort) Homeworks
 
 This repository hosts for homeworks for Data Engineering Zoomcamp 2023.
 
