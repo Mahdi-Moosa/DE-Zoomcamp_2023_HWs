@@ -59,7 +59,8 @@ Make sure you have the parquet data files for Yellow taxi data for Feb. 2019 and
     * 27,235,753
     * 11,338,483
 
-### Ways to get to the ans: 
+### Steps to get to the ans: 
+
 * **Step 1:** Run el_web_to_gcs.py and el_gcs_to_bq.py. 
 * **Step 2:** Then run query: "SELECT COUNT(*) FROM `dezoomcamp_ny_taxi.yellow`;" in BigQuery.*
 
