@@ -87,7 +87,7 @@ How many rows were processed by the script?
 
 ## Steps to get the answer:
 
-* **Step 1:** Upload deployment repository to github (https://github.com/Mahdi-Moosa/DE-Zoomcamp_Week-2-HW_Prefect_GitHub-deployment).
+* **Step 1:** Upload deployment repository to github (https://github.com/Mahdi-Moosa/DE-Zoomcamp_Week-2-HW_Prefect_GitHub-deployment). *Prefect can not upload the directory to GitHub.*
 * **Step 2:** run command: prefect deployment build etl_web_to_gcs.py:etl_parent_flow -sb github/github-hw-2-de-zoomcamp -n github_deployment_parent_flow -a
 
   *Note: The deployment build command needs local python file (apparenly to perfrom an intial check to generat the deployment yaml file).*
