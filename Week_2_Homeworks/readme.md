@@ -7,29 +7,29 @@ How many rows does that dataset have?
 
 *Output*
 
-19:57:55.110 | INFO    | Task run 'clean-b9fd7e03-0' - columns: VendorID                        float64
-lpep_pickup_datetime     datetime64[ns]
-lpep_dropoff_datetime    datetime64[ns]
-store_and_fwd_flag               object
-RatecodeID                      float64
-PULocationID                      int64
-DOLocationID                      int64
-passenger_count                 float64
-trip_distance                   float64
-fare_amount                     float64
-extra                           float64
-mta_tax                         float64
-tip_amount                      float64
-tolls_amount                    float64
-ehail_fee                       float64
-improvement_surcharge           float64
-total_amount                    float64
-payment_type                    float64
-trip_type                       float64
-congestion_surcharge            float64
-dtype: object
-19:57:55.112 | INFO    | Task run 'clean-b9fd7e03-0' - rows: 447770
-19:57:56.626 | INFO    | Task run 'clean-b9fd7e03-0' - Finished in state Completed()
+      19:57:55.110 | INFO    | Task run 'clean-b9fd7e03-0' - columns: VendorID                        float64
+      lpep_pickup_datetime     datetime64[ns]
+      lpep_dropoff_datetime    datetime64[ns]
+      store_and_fwd_flag               object
+      RatecodeID                      float64
+      PULocationID                      int64
+      DOLocationID                      int64
+      passenger_count                 float64
+      trip_distance                   float64
+      fare_amount                     float64
+      extra                           float64
+      mta_tax                         float64
+      tip_amount                      float64
+      tolls_amount                    float64
+      ehail_fee                       float64
+      improvement_surcharge           float64
+      total_amount                    float64
+      payment_type                    float64
+      trip_type                       float64
+      congestion_surcharge            float64
+      dtype: object
+      19:57:55.112 | INFO    | Task run 'clean-b9fd7e03-0' - rows: 447770
+      19:57:56.626 | INFO    | Task run 'clean-b9fd7e03-0' - Finished in state Completed()
 
 ## ANS: rows: 447770
 
@@ -89,29 +89,31 @@ How many rows were processed by the script?
 * **Step 4:** run command: prefect agent start --work-queue "default"
 
 **Run with specified parameters, i.e., Nov 2020 (green).**
-*Output*
-20:13:35.961 | INFO    | Task run 'clean-2c6af9f6-0' - columns: VendorID                        float64
-lpep_pickup_datetime     datetime64[ns]
-lpep_dropoff_datetime    datetime64[ns]
-store_and_fwd_flag               object
-RatecodeID                      float64
-PULocationID                      int64
-DOLocationID                      int64
-passenger_count                 float64
-trip_distance                   float64
-fare_amount                     float64
-extra                           float64
-mta_tax                         float64
-tip_amount                      float64
-tolls_amount                    float64
-ehail_fee                       float64
-improvement_surcharge           float64
-total_amount                    float64
-payment_type                    float64
-trip_type                       float64
-congestion_surcharge            float64
-dtype: object
-20:13:35.962 | INFO    | Task run 'clean-2c6af9f6-0' - rows: 88605
+### Relevant output from the command prompt
+
+
+      20:13:35.961 | INFO    | Task run 'clean-2c6af9f6-0' - columns: VendorID                        float64
+      lpep_pickup_datetime     datetime64[ns]
+      lpep_dropoff_datetime    datetime64[ns]
+      store_and_fwd_flag               object
+      RatecodeID                      float64
+      PULocationID                      int64
+      DOLocationID                      int64
+      passenger_count                 float64
+      trip_distance                   float64
+      fare_amount                     float64
+      extra                           float64
+      mta_tax                         float64
+      tip_amount                      float64
+      tolls_amount                    float64
+      ehail_fee                       float64
+      improvement_surcharge           float64
+      total_amount                    float64
+      payment_type                    float64
+      trip_type                       float64
+      congestion_surcharge            float64
+      dtype: object
+      20:13:35.962 | INFO    | Task run 'clean-2c6af9f6-0' - rows: 88605
 
 ## ANS: rows: 88605
 
