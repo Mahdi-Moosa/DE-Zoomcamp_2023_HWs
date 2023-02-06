@@ -60,8 +60,8 @@ Make sure you have the parquet data files for Yellow taxi data for Feb. 2019 and
     * 11,338,483
 
 ### Ways to get to the ans: 
-Run el_web_to_gcs.py and el_gcs_to_bq.py. 
-Then run query: "SELECT COUNT(*) FROM `dezoomcamp_ny_taxi.yellow`;" in BigQuery.*
+* **Step 1:** Run el_web_to_gcs.py and el_gcs_to_bq.py. 
+* **Step 2:** Then run query: "SELECT COUNT(*) FROM `dezoomcamp_ny_taxi.yellow`;" in BigQuery.*
 
 ## ANS: 14851920
 
@@ -147,15 +147,15 @@ How many rows were processed by the script?
 *Solution*
 
 Commands: 
-**Step 1:** Create prefect cloud account.
-**Step 2:** Run: prefect cloud login -k MY_PREFECT_API_KEY
-**Step 3:** GCS bucket was not present in the Blocks. Added by running command: prefect block register -m prefect_gcp
-**Step 4:** Add gc credentials block, add GCS buckets block.
-**Step 5:** Run: prefect deployment build flows/etl_web_to_gcs.py:etl_parent_flow -n cloud_flow_deployment -sb github/github-hw-2-de-zoomcamp --apply
-**Step 6:** Run: prefect agent start --work-queue "default"
-**Step 7:** Trigger run from prefect cloud UI.
+* **Step 1:** Create prefect cloud account.
+* **Step 2:** Run: prefect cloud login -k MY_PREFECT_API_KEY
+* **Step 3:** GCS bucket was not present in the Blocks. Added by running command: prefect block register -m prefect_gcp
+* **Step 4:** Add gc credentials block, add GCS buckets block.
+* **Step 5:** Run: prefect deployment build flows/etl_web_to_gcs.py:etl_parent_flow -n cloud_flow_deployment -sb github/github-hw-2-de-zoomcamp --apply
+* **Step 6:** Run: prefect agent start --work-queue "default"
+* **Step 7:** Trigger run from prefect cloud UI.
 
-Outpur: rows: 514392
+      Output: rows: 514392
 
 ## ANS: rows: 514392
 
