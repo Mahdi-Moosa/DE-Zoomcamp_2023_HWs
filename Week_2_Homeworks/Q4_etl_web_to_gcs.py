@@ -3,7 +3,6 @@ import pandas as pd
 from prefect import flow, task
 from prefect_gcp.cloud_storage import GcsBucket
 from random import randint
-# from prefect.filesystems import GCS
 
 
 @task(retries=3)
@@ -51,7 +50,6 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
 def write_gcs(path: Path) -> None:
     """Upload local parquet file to GCS"""
     gcs_block = GcsBucket.load("de-zoomcamp-gcs")
-    # gcs_block = GCS.load("de-zoomcamp-gcs")
     gcs_block.upload_from_path(from_path=path, to_path=path)
     return
 
@@ -71,7 +69,7 @@ def etl_web_to_gcs(color : str, year: int, month: int) -> None:
     write_gcs(path)
 
 @flow()
-def etl_parent_flow(months: list[int], year: int, color: str):
+def etl_parent_flow(months: list[int] = [19,20], year: int = 1900, color: str = 'ghost'):
     for month in months:
         etl_web_to_gcs(color, year, month)
 
