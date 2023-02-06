@@ -3,6 +3,10 @@ Using the etl_web_to_gcs.py flow that loads taxi data into GCS as a guide, creat
 
 How many rows does that dataset have?
 
+## Steps to get to the answer
+
+run the python script named *"Q1-Q3_etl_web_to_gcs.py"* with Jan 2020 green taxi parameters.
+
 ### Relevant output from the command prompt
 
 *Output*
@@ -59,7 +63,7 @@ Make sure you have the parquet data files for Yellow taxi data for Feb. 2019 and
     * 27,235,753
     * 11,338,483
 
-### Steps to get to the ans: 
+### Steps to get to the answer: 
 
 * **Step 1:** Run el_web_to_gcs.py and el_gcs_to_bq.py. 
 * **Step 2:** Then run query: "SELECT COUNT(*) FROM `dezoomcamp_ny_taxi.yellow`;" in BigQuery.*
