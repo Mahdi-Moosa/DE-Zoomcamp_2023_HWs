@@ -150,7 +150,7 @@ How many rows were processed by the script?
     728,390
     514,392
 
-*Solution*
+### *Solution*
 
 Commands: 
 * **Step 1:** Create prefect cloud account.
