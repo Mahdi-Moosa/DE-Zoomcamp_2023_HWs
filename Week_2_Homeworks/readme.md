@@ -3,7 +3,9 @@ Using the etl_web_to_gcs.py flow that loads taxi data into GCS as a guide, creat
 
 How many rows does that dataset have?
 
-## Relevant output from the command prompt
+### Relevant output from the command prompt
+
+*Output*
 
 19:57:55.110 | INFO    | Task run 'clean-b9fd7e03-0' - columns: VendorID                        float64
 lpep_pickup_datetime     datetime64[ns]
@@ -57,7 +59,9 @@ Make sure you have the parquet data files for Yellow taxi data for Feb. 2019 and
     * 27,235,753
     * 11,338,483
 
-*Ways to get to the ans: Run el_web_to_gcs.py and el_gcs_to_bq.py. Then run query: "SELECT COUNT(*) FROM `dezoomcamp_ny_taxi.yellow`;" in BigQuery.*
+### Ways to get to the ans: 
+Run el_web_to_gcs.py and el_gcs_to_bq.py. 
+Then run query: "SELECT COUNT(*) FROM `dezoomcamp_ny_taxi.yellow`;" in BigQuery.*
 
 ## ANS: 14851920
 
@@ -76,14 +80,15 @@ How many rows were processed by the script?
     88,605
     190,225
 
-## Steps:
-* Upload deployment repository to github (https://github.com/Mahdi-Moosa/DE-Zoomcamp_Week-2-HW_Prefect_GitHub-deployment).
-* run command: prefect deployment build etl_web_to_gcs.py:etl_parent_flow -sb github/github-hw-2-de-zoomcamp -n github_deployment_parent_flow -a
-*Note: The deployment build command needs local python file (apparenly to perfrom an intial check to generat the deployment yaml file).*
-* run command: prefect deployment apply etl_parent_flow-deployment.yaml
-* run command: prefect agent start --work-queue "default"
+## Steps to get the answer:
 
-**Run with specified parameters, i.e., Nov 2020 (Green Taxi).**
+* **Step 1:** Upload deployment repository to github (https://github.com/Mahdi-Moosa/DE-Zoomcamp_Week-2-HW_Prefect_GitHub-deployment).
+* **Step 2:** run command: prefect deployment build etl_web_to_gcs.py:etl_parent_flow -sb github/github-hw-2-de-zoomcamp -n github_deployment_parent_flow -a
+*Note: The deployment build command needs local python file (apparenly to perfrom an intial check to generat the deployment yaml file).*
+* **Step 3:** run command: prefect deployment apply etl_parent_flow-deployment.yaml
+* **Step 4:** run command: prefect agent start --work-queue "default"
+
+**Run with specified parameters, i.e., Nov 2020 (green).**
 *Output*
 20:13:35.961 | INFO    | Task run 'clean-2c6af9f6-0' - columns: VendorID                        float64
 lpep_pickup_datetime     datetime64[ns]
@@ -138,14 +143,15 @@ How many rows were processed by the script?
     514,392
 
 *Solution*
+
 Commands: 
-*Step 1*: Create prefect cloud account.
-*Step 2:* Run: prefect cloud login -k MY_PREFECT_API_KEY
-*Step 3:* GCS bucket was not present in the Blocks. Added by running command: prefect block register -m prefect_gcp
-*Step 4:* Add gc credentials block, add GCS buckets block.
-*Step 5:* Run: prefect deployment build flows/etl_web_to_gcs.py:etl_parent_flow -n cloud_flow_deployment -sb github/github-hw-2-de-zoomcamp --apply
-*Step 6:* Run: prefect agent start --work-queue "default"
-*Step 7:* Trigger run from prefect cloud UI.
+**Step 1:** Create prefect cloud account.
+**Step 2:** Run: prefect cloud login -k MY_PREFECT_API_KEY
+**Step 3:** GCS bucket was not present in the Blocks. Added by running command: prefect block register -m prefect_gcp
+**Step 4:** Add gc credentials block, add GCS buckets block.
+**Step 5:** Run: prefect deployment build flows/etl_web_to_gcs.py:etl_parent_flow -n cloud_flow_deployment -sb github/github-hw-2-de-zoomcamp --apply
+**Step 6:** Run: prefect agent start --work-queue "default"
+**Step 7:** Trigger run from prefect cloud UI.
 
 Outpur: rows: 514392
 
