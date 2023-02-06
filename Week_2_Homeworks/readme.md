@@ -7,7 +7,7 @@ How many rows does that dataset have?
 
 run the python script named *"Q1-Q3_etl_web_to_gcs.py"* with Jan 2020 green taxi parameters.
 
-### Relevant output from the command prompt
+### Relevant output from the shell
 
 *Output*
 
