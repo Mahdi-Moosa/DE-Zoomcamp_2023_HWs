@@ -151,6 +151,7 @@ How many rows were processed by the script?
     514,392
 
 ### *Solution*
+Solution for email notification using prefect cloud.
 
 Commands: 
 * **Step 1:** Create prefect cloud account.
