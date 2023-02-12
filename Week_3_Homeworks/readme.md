@@ -9,14 +9,14 @@ What is the count for fhv vehicle records for year 2019?
 
 SQL Query:
 
-CREATE OR REPLACE EXTERNAL TABLE `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv`
-OPTIONS (
-  format = 'csv',
-  uris = ['gs://mmm-de-zoomcamp/data/fhv/*.csv.gz']
-);
+    CREATE OR REPLACE EXTERNAL TABLE `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv`
+    OPTIONS (
+      format = 'csv',
+      uris = ['gs://mmm-de-zoomcamp/data/fhv/*.csv.gz']
+    );
 
-SELECT COUNT(*)
-FROM `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv`;
+    SELECT COUNT(*)
+    FROM `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv`;
 
 ## ANS: 43244696
 
@@ -31,10 +31,11 @@ What is the estimated amount of data that will be read when this query is execut
     0 MB for the External Table and 317.94MB for the BQ Table
 
 SQL Query:
-  SELECT
-    DISTINCT COUNT(Affiliated_base_number)
-  FROM
-    `dezoomcamp_ny_taxi.fhv_internal`;
+
+      SELECT
+        DISTINCT COUNT(Affiliated_base_number)
+      FROM
+        `dezoomcamp_ny_taxi.fhv_internal`;
 
 ## ANS: External table: 0 B ;BQ table: 317.94 MB
 
@@ -47,12 +48,14 @@ How many records have both a blank (null) PUlocationID and DOlocationID in the e
     5
     20,332
 
-SELECT 
-    COUNT(*) 
-FROM `dezoomcamp_ny_taxi.fhv_internal` 
-WHERE 
-    PUlocationID IS NULL 
-    AND DOlocationID IS NULL;
+SQL Query:
+
+    SELECT 
+        COUNT(*) 
+    FROM `dezoomcamp_ny_taxi.fhv_internal` 
+    WHERE 
+        PUlocationID IS NULL 
+        AND DOlocationID IS NULL;
 
 ## ANS: 717748
 
@@ -78,30 +81,32 @@ Use the BQ table you created earlier in your from clause and note the estimated 
     582.63 MB for non-partitioned table and 0 MB for the partitioned table
     646.25 MB for non-partitioned table and 646.25 MB for the partitioned table
 
-CREATE OR REPLACE TABLE
-  `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal_partitioned`
-PARTITION BY
-  DATE(pickup_datetime) AS
-SELECT
-  *
-FROM
-  `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal`;
+SQL Query:
 
-SELECT
-  DISTINCT affiliated_base_number
-FROM
-  `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal`
-WHERE
-  pickup_datetime BETWEEN '2019-03-01'
-  AND '2019-03-31';
+    CREATE OR REPLACE TABLE
+      `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal_partitioned`
+    PARTITION BY
+      DATE(pickup_datetime) AS
+    SELECT
+      *
+    FROM
+      `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal`;
 
-SELECT
-  DISTINCT affiliated_base_number
-FROM
-  `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal_partitioned`
-WHERE
-  pickup_datetime BETWEEN '2019-03-01'
-  AND '2019-03-31';
+    SELECT
+      DISTINCT affiliated_base_number
+    FROM
+      `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal`
+    WHERE
+      pickup_datetime BETWEEN '2019-03-01'
+      AND '2019-03-31';
+
+    SELECT
+      DISTINCT affiliated_base_number
+    FROM
+      `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv_internal_partitioned`
+    WHERE
+      pickup_datetime BETWEEN '2019-03-01'
+      AND '2019-03-31';
   
 ## ANS: 647.87 for non-partitioned, 23.05 for partitioned.
 
