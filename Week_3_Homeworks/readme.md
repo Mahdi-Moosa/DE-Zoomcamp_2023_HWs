@@ -56,7 +56,7 @@ WHERE
 
 ## ANS: 717748
 
-Question 4:
+# Question 4:
 
 What is the best strategy to optimize the table if query always filter by pickup_datetime and order by affiliated_base_number?
 
