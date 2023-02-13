@@ -136,3 +136,5 @@ It is best practice in Big Query to always cluster your data:
 A better format to store these files may be parquet. Create a data pipeline to download the gzip files and convert them into parquet. Upload the files to your GCP Bucket and create an External and BQ Table.
 
 Note: Column types for all files used in an External Table must have the same datatype. While an External Table may be created and shown in the side panel in Big Query, this will need to be validated by running a count query on the External Table to check if any errors occur.
+
+## ANS: BigQuery is quite efficient in querying parquet files. Discussion: [link](https://mahdimoosa.substack.com/p/comparing-different-approaches-to)
