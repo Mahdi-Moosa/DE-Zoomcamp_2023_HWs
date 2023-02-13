@@ -4,9 +4,17 @@ from pathlib import Path
 from prefect import flow, task
 from prefect_gcp.cloud_storage import GcsBucket
 
+dtype_dict = {'dispatching_base_num': str,
+ 'pickup_datetime': str,
+ 'dropOff_datetime': str,
+ 'PUlocationID': 'float64',
+ 'DOlocationID': 'float64',
+ 'SR_Flag': 'float64',
+ 'Affiliated_base_number': str}
+
 @task(retries=3, log_prints=True)
 def fetch(dataset_url: str)-> pd.DataFrame:
-    df = pd.read_csv(dataset_url)
+    df = pd.read_csv(dataset_url, dtype= dtype_dict)
     print(f'Dataframe loaded for: {dataset_url}')
     return df
 
