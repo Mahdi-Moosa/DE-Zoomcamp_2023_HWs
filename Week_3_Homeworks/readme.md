@@ -68,7 +68,7 @@ What is the best strategy to optimize the table if query always filter by pickup
     Partition by pickup_datetime Partition by affiliated_base_number
     Partition by affiliated_base_number Cluster on pickup_datetime
 
-## ANS: 
+## ANS: Partition by pickup_datetime Cluster on affiliated_base_number
 
 
 # Question 5:
