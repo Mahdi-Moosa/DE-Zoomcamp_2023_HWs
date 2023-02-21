@@ -9,10 +9,14 @@ SELECT COUNT(*)
 FROM `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv`;
 
 -- Q2
-  SELECT
-    DISTINCT COUNT(Affiliated_base_number)
-  FROM
-    `dezoomcamp_ny_taxi.fhv_internal`;
+
+CREATE OR REPLACE TABLE `dezoomcamp_ny_taxi.fhv_internal` AS
+SELECT * FROM `de-zoomcamp-mmm.dezoomcamp_ny_taxi.fhv`;
+
+SELECT
+  DISTINCT COUNT(Affiliated_base_number)
+FROM
+  `dezoomcamp_ny_taxi.fhv_internal`;
 
 -- Q3
 SELECT 
