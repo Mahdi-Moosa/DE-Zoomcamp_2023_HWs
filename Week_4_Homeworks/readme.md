@@ -16,7 +16,7 @@ You should find the views and models for querying in your DWH.
 
 #### Solution
 
-* Step 1: Ingest data. Data ingestion scripts: *from-web-to-gcs* and *from-gcs-to-bq*
+* Step 1: Ingest data. Data ingestion scripts: [*from-web-to-gcs*](https://github.com/Mahdi-Moosa/DE-Zoomcamp_2023_HWs/blob/main/Week_4_Homeworks/from_web_to_gcs_parquet.py) and [*from-gcs-to-bq*](https://github.com/Mahdi-Moosa/DE-Zoomcamp_2023_HWs/blob/main/Week_4_Homeworks/el_gcs_to_bq.py)
 * Step 2: Perfrom data transformation using DBT (link to repo: https://github.com/Mahdi-Moosa/dbt_de_zoomcamp-2023-week-4)
 * Step 3: Query database:
 
