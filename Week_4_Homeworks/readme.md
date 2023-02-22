@@ -1,4 +1,4 @@
-# Week-4 Homework Solution Steps
+# Week-4 Homework Solution
 
 * Link to week-4 contents: [DE Zoomcamp 2023 Week-4] (https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_4_analytics_engineering)
 * Link to the Homeworks for week-4: [link](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/cohorts/2023/week_4_analytics_engineering/homework.md)
