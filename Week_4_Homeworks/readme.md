@@ -1,3 +1,5 @@
+# Week-4 Homework Solution Steps
+
 Link to the Homeworks for week-4: [link](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/cohorts/2023/week_4_analytics_engineering/homework.md)
 
 ### Question 1: 
@@ -30,7 +32,7 @@ You should find the views and models for querying in your DWH.
       FROM
           pickup_datetime) = 2020;
 
-* Step 4: Record query output: 61597007
+* Step 4: Recorded query output: 61597007
 
 **ANS**: Closest answer available: 61648442
 
@@ -45,7 +47,15 @@ You will need to complete "Visualising the data" videos, either using [google da
 - 76.3/23.7
 - 99.1/0.9
 
+#### Solution
 
+*Google Data Studio Snapshot on pie chart (service type-filtering).*
+
+![service type filter fhv data](https://user-images.githubusercontent.com/82473321/220749701-7790719b-851f-4bfb-8707-84206b63552f.JPG)
+
+Recorded answer: 89.8/10.2
+
+**ANS**: Closest available answer: 89.9/10.1
 
 ### Question 3: 
 
@@ -59,6 +69,23 @@ Filter records with pickup time in year 2019.
 - 53244696
 - 63244696
 
+#### Solution
+
+* Step 1-2: Similar to Q1 ans.
+* Step 3: Run query:
+
+          SELECT
+          COUNT(*)
+          FROM
+          `dbt_mmm.stg_fhv_tripdata`
+          WHERE
+          EXTRACT(year
+          FROM
+              pickup_datetime)=2019;
+
+* Step 4: Recorded answer: 43244696
+
+**ANS**: 43244696
 
 ### Question 4: 
 
@@ -73,6 +100,22 @@ Run it via the CLI without limits (is_test_run: false) and filter records with p
 - 32998722
 - 42998722
 
+#### Solution
+Run query:
+
+    SELECT
+    COUNT(*)
+    FROM
+    `dbt_mmm.fact_fhv_trips`
+    WHERE
+    EXTRACT(year
+    FROM
+        pickup_datetime)=2019;
+
+Recorded answer: 22998722
+
+**ANS**: 22998722
+
 ### Question 5: 
 
 **What is the month with the biggest amount of rides after building a tile for the fact_fhv_trips table?**
@@ -83,3 +126,13 @@ Create a dashboard with some tiles that you find interesting to explore the data
 - April
 - January
 - December
+
+#### Solution
+
+*Google Data Studio Snapshot on month-aggregated-time-series.*
+
+![Month-aggregated-time-series](https://user-images.githubusercontent.com/82473321/220749132-9c936c2b-820d-495d-a064-f1375330d755.jpg)
+
+Record answer: March 2019
+
+**ANS**: March
